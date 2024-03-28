@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" href="images/icone-logo_Hospen.png" type="image/x-icon">
+	<title>Hospen</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen"
+		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<script src="https://kit.fontawesome.com/ccc747df4a.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/gh/LieutenantPeacock/SmoothScroll@1.2.0/src/smoothscroll.min.js"
+		integrity="sha384-UdJHYJK9eDBy7vML0TvJGlCpvrJhCuOPGTc7tHbA+jHEgCgjWpPbmMvmd/2bzdXU"
+		crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header id="header">
+		<div id="logo"></div>
+		<a id="ateplanos" href="#area-escolha-planos">Planos</a>
+		<svg id="menu-icon" width="40" height="40" fill="none" stroke="#FD8f08" stroke-linecap="round"
+			stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M4 18h16M4 6h16H4Zm0 6h16H4Z"></path>
+		</svg>
+	</header>
+	<main>
+		<div id="page">
+			<div id="top-of-page">
+				<div id="gray-overlay">
+					<section id="content-main">
+						<h1>Maintain Your Business</h1>
+						<label>Always Connected!</label>
+						<article>
+							<p>In the digital age, your company must always be online and ready to meet market demands.
+								We provide specialized WordPress hosting, with premium themes and plugins, along with
+								professional courses on website and online store creation in the Combo Cloud package.
+								Plus:
+							</p>
+							<ul>
+								<li>⦁ &nbsp; Free Domain Registration: Strengthen your online presence with a
+									complimentary domain registration.</li>
+								<li>⦁ &nbsp; Complete Online Courses: Learn how to build and manage your website with
+									our comprehensive online courses.</li>
+								<li>⦁ &nbsp; Award-Winning Technical Support: Experienced team available 24/7 to ensure
+									optimal performance of your site.</li>
+							</ul>
+						</article>
+						<button class="btn" id="btn-main">Start now</button>
+					</section>
+				</div>
+			</div>
+			<div id="center-of-page">
+				<section id="area-escolha-planos">
+					<h2>Escolha o Plano Ideal para o Sucesso Online!</h2>
+					<p>Construa sua presença online com nossos planos de hospedagem. Escolha o plano ideal para você!
+					</p>
+					<div class="containerCarrossel">
+						<button class="control arrow-left">
+							<svg id="menu-icon" width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round"
+								stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="m16 4-8 8 8 8"></path>
+							</svg>
+						</button>
+						<button class="control arrow-right">
+							<svg id="menu-icon" width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round"
+								stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="m8 4 8 8-8 8"></path>
+							</svg>
+						</button>
+						<div id="area-planos" class="gallery-wrapper">
+							<div class="gallery">
+								<div class="plano"></div>
+								<div class="plano plano-selected">
+									<span class="popular">Most Popular</span>
+									<!-- tentar trocar este span por plano.before com content: "Most popular"; -->
+									<section class="infos-planos">
+										<section id="header-plano">
+											<label>Plano Intermediário</label>
+											<h3>Pro</h3>
+										</section>
+										<section id="cashback">
+											<span>46% de chashback</span>
+										</section>
+										<section id="preco-plano">
+											<span>R$</span>
+											<strong>15,99</strong>
+											<span>/mounth</span>
+											<span>&nbsp;R$99,99&nbsp;</span>
+										</section>
+										<!-- <button>Add to cart</button> -->
+										<button><i class="fa-solid fa-cart-shopping"></i>&nbsp;Add to cart</button>
+									</section>
+									<button class="btnSM" id="saibaMais-1" onclick="MostraDialog(this)">Saiba mais <span id="iconSaibaMais"></span></button>
+									<dialog class="modal">
+										<ul type="none">
+											<li><span class="beneficios"></span>Espaço de armazenamento: 10 GB</li>
+											<li><span class="beneficios"></span>Transferência de dados mensal: 100 GB</li>
+											<li><span class="beneficios"></span>Suporte técnico básico</li>
+											<li><span class="beneficios"></span>Certificado SSL gratuito</li>
+											<li><span class="desvantagens"></span>Backup diário automático</li>
+										</ul>
+									</dialog>
+								</div>
+								<div class="plano"></div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+	<footer>
+	</footer>
+</body>
+
+</html>
+<script src="scrypt.js"></script>
