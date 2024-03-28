@@ -183,7 +183,7 @@ h2 {
 }
 
 #area-escolha-planos h2 {
-    font-size: clamp(25rem, 3vw + 10rem, 50rem);
+    font-size: clamp(25rem, 5vw + 10rem, 50rem);
     line-height: 35rem;
     font-weight: 700;
     text-align: center;
@@ -297,6 +297,8 @@ h2 {
 .plano .infos-planos #header-plano label {
     display: block;
     width: 30px;
+
+    font-size: 18rem;
 
     position: relative;
     left: 30px;
