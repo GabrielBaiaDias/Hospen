@@ -3,14 +3,28 @@ window.addEventListener("scroll", function () {
     header.classList.toggle('rolagem', this.window.scrollY > 0)
 })
 
-var planos = document.querySelector("#ateplanos")
-planos.onclick = function () {
-    var scroller = new smoothScroll({ duration: 350 });
-    scroller.smoothScroll({ yPos: 716 });
-}
+const linkPlanos = document.querySelector('#linkPlanos')
+linkPlanos.addEventListener('click', function (event) {
+    event.preventDefault();
 
-window.addEventListener('load', function () {
-    planos.click();
+    var headerHeight = 80;
+    var element = document.querySelector('#area-escolha-planos');
+    var elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    var offset = elementPosition - headerHeight;
+    
+    window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+    });
+    
+    controls[1].click()
+});
+
+var planos = document.querySelectorAll(".plano");
+planos.forEach(plano => {
+    if (!plano.classList.contains("plano-principal")) {
+        plano.style.paddingTop = "45px";
+    }
 });
 
 /* Carrossel */
@@ -22,7 +36,7 @@ let lengthItems = items.length;
 
 let idCount = 0;
 items.forEach((item) => {
-    item.id = idCount;
+    item.id = "plano" + idCount;
     idCount++
 })
 
@@ -40,11 +54,11 @@ controls.forEach((control) => control.addEventListener("click", () => {
 
     FocarCurrentItem();
 
-    console.log("controls: " + controls, " - currentitem: " + currentItem, " - items: " + items, " - lengthItems: " + lengthItems)
+    // console.log("controls: " + controls, " - currentitem: " + currentItem, " - items: " + items, " - lengthItems: " + lengthItems);
 }))
 
 items.forEach((item) => item.addEventListener("click", () => {
-    currentItem = Number(item.id);
+    currentItem = Number(item.id.slice(-1));
     FocarCurrentItem();
 }))
 
@@ -69,6 +83,7 @@ function MostraDialog(e) {
         modals[idNumBtn].show();
     } else {
         modals[idNumBtn].close();
+        linkPlanos.click()
     }
-    console.log(idNumBtn, btnSMs, btnSMs[idNumBtn], modals, modals[idNumBtn]);
+    // console.log(idNumBtn, btnSMs, btnSMs[idNumBtn], modals, modals[idNumBtn], setas);
 }
