@@ -3,8 +3,8 @@ window.addEventListener("scroll", function () {
     header.classList.toggle('rolagem', this.window.scrollY > 0)
 })
 
-const linkPlanos = document.querySelector('#linkPlanos')
-linkPlanos.addEventListener('click', function (event) {
+const btnMain = document.querySelector('#btn-main')
+btnMain.addEventListener('click', function (event) {
     event.preventDefault();
 
     var headerHeight = 80;
@@ -17,7 +17,10 @@ linkPlanos.addEventListener('click', function (event) {
         behavior: 'smooth'
     });
     
-    controls[1].click()
+    setTimeout(function() {
+        currentItem = 1;
+        FocarCurrentItem();
+    }, 500);
 });
 
 var planos = document.querySelectorAll(".plano");

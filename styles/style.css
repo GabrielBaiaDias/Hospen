@@ -9,11 +9,12 @@
 
 :root {
     font-size: 6.25%;
+    color: var(--cor-1);
 
-    --cor-1: #0E182B;
-    --cor-2: #192953;
-    --cor-3: #3C5275;
-    --cor-4: #818da0;
+    --cor-1: #0b182f;
+    --cor-2: #0f2356;
+    --cor-3: #315185;
+    --cor-4: #6f8ebf;
     --cor-5: #FD8F08;
     --cor-6: #FFA83A;
     --cor-7: #FFD06B;
@@ -51,7 +52,7 @@ header {
 
 header.rolagem {
     height: 80px;
-    background-color: rgb(225, 240, 250, 0.95);
+    background-color: #fffffff2;
 }
 
 header #logo {
@@ -62,7 +63,7 @@ header #logo {
 
     background: left center / contain
         /* fixed */
-        no-repeat url(images/logo-fundo-transparente_2.png);
+        no-repeat url(../images/logo-fundo-transparente_2.png);
 }
 
 body {
@@ -91,11 +92,30 @@ h2 {
     width: 100%;
     height: 100vh;
 
-    padding-top: 200px;
+    position: relative;
 
-    background: center 50% / cover
+    padding-bottom: 100px;
+
+    background: center center / cover
         /* fixed */
-        no-repeat url(images/wallpaper-dark_blue.jpeg);
+        no-repeat url(../images/Imagem-Principal_Hospen.jpg);
+}
+
+#page #gray-overlay {
+    width: 100%;
+    height: 100%;
+
+    float: left;
+    z-index: 0;
+
+    position: absolute;
+    top: 1px;
+    background: linear-gradient(to top,rgb(225, 237, 254) 0%, transparent 30%);
+    color: white;
+}
+
+#top-of-page #content-main * {
+    z-index: 1;
 }
 
 #top-of-page #content-main {
@@ -104,8 +124,8 @@ h2 {
 
     margin-bottom: 40px;
     padding: 20px;
+    padding-top: 150px;
 
-    color: rgba(255, 255, 255, 0.9);
     text-indent: 10px;
 
     display: grid;
@@ -114,6 +134,7 @@ h2 {
         "conteudo"
         "botao";
     grid-template-rows: repeat(4, auto);
+
 
 }
 
@@ -135,7 +156,7 @@ h2 {
     font-size: clamp(25rem, 5vw + 10rem, 55rem);
 
     align-self: center;
-
+    color: var(--cor-2);
     /* line-height: 50px; */
 }
 
@@ -144,6 +165,8 @@ h2 {
     left: 50%;
 
     font-family: 'Epilogue';
+    color: var(--cor-3);
+
 }
 
 #top-of-page #content-main article ul {
@@ -168,29 +191,44 @@ h2 {
 
 #top-of-page #content-main #btn-main {
     grid-area: botao;
-
-    width: 90%;
-    min-height: 70px;
+/* 
+    width: 85%;
+    min-height: 70px; 
+    */
 
     position: absolute;
-    bottom: 50px;
+    bottom: 12%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
 
     margin: 0px auto;
+    padding: 25px  100px;
 
     border-radius: 10px;
-    background-color: var(--cor-5);
+    background-color: var(--cor-2);
     color: white;
 
-    font-size: clamp(15rem, 20rem, 30rem);
-    font-weight: 300;
+    font-size: 22rem;
+    font-weight: 700;
+    text-transform: uppercase;
 
+    transition: .4s;
+    box-sizing: border-box;
+}
+
+#top-of-page #content-main #btn-main:hover {
+    transform: scale(1.05, 1.05);
 }
 
 #area-escolha-planos {
     width: 100%;
     height: fit-content;
 
-    background-color: rgb(225, 237, 254);
+    background: linear-gradient(to bottom,rgb(225, 237, 254) 90%, transparent);
+
 
     padding: 25px 10px 10px 10px;
 }
@@ -263,6 +301,7 @@ h2 {
 .gallery-wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     overflow-y: auto;
 
@@ -350,6 +389,7 @@ h2 {
 
 .gallery>#plano0 .infos-planos .cashback span {
     background-color: var(--cor-12);
+    /* background-color: var(--cor-4); */
 }
 
 .plano-principal .infos-planos .cashback span {
@@ -358,6 +398,7 @@ h2 {
 
 .gallery>#plano2 .infos-planos .cashback span {
     background-color: var(--cor-16);
+    /* background-color: var(--cor-4); */
 }
 
 .plano .infos-planos .cashback span {
@@ -402,6 +443,7 @@ h2 {
 
 .gallery>#plano0>section>button {
     background-color: var(--cor-9);
+    /* background-color: var(--cor-3); */
 }
 
 .plano-principal>.infos-planos>button {
@@ -410,6 +452,7 @@ h2 {
 
 .gallery>#plano2>.infos-planos>button {
     background-color: var(--cor-13);
+    /* background-color: var(--cor-3); */
 }
 
 .plano .infos-planos button {
@@ -426,7 +469,7 @@ h2 {
 
     transition: transform 0.3s;
 
-    color: var(--cor-2);
+    color: var(--cor-1);
     /*
     =========================PASSAR O HOVER QUANDO FOR UMA TELA MAIOR 
     border: 1px solid var(--cor-4);
@@ -472,6 +515,8 @@ h2 {
 .gallery>#plano0 #saibaMais-1 {
     border-top: 1px solid var(--cor-9);
     color: var(--cor-9);
+    /* border-top: 1px solid var(--cor-1);
+    color: var(--cor-1); */
 }
 
 .plano-principal #saibaMais-2 {
@@ -482,6 +527,8 @@ h2 {
 .gallery>#plano2 #saibaMais-3 {
     border-top: 1px solid var(--cor-13);
     color: var(--cor-13);
+    /* border-top: 1px solid var(--cor-1);
+    color: var(--cor-1); */
 }
 
 
@@ -580,7 +627,7 @@ h2 {
     flex-direction: row;
     justify-content: center;
 
-    background: center bottom / contain no-repeat url(images/img-pessoa-sentada_2.jpg);
+    background: center bottom / contain no-repeat url(../images/img-pessoa-sentada_2.jpg);
 }
 
 #center-of-page #vantagens-Hospen #conteudo {
@@ -633,11 +680,17 @@ h2 {
 }
 
 #extraFooter h3 {
+    margin: 10px 0px;
+
     font-size: 25rem;
+    line-height: 25rem;
+
+    text-align: center;
 }
 
-#extraFooter h3 {
-    margin-bottom: 10px;
+#extraFooter p {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #extraFooter #contatos {
@@ -649,13 +702,17 @@ h2 {
     justify-content: center;
 }
 
-#extraFooter #contatos table tbody th {
-    font-size: 19rem;
-    text-transform: uppercase;
-}
-
 #extraFooter #contatos table{
     width: 80%;
+
+    margin: auto ;
+    margin-bottom: 20px;
+}
+
+#extraFooter #contatos table tbody th {
+    font-size: 20rem;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 #extraFooter #contatos table tbody tr td:nth-child(1){
@@ -666,6 +723,8 @@ h2 {
 #extraFooter #contatos table tbody tr td{
     text-align: start;
     font-size: 10px !important;
+
+    font-weight: 300;
 }
 
 footer {
