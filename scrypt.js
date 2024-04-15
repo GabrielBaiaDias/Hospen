@@ -3,6 +3,33 @@ window.addEventListener("scroll", function () {
     header.classList.toggle('rolagem', this.window.scrollY > 0)
 })
 
+// slide Modal Hamburguer
+
+const btnAbreModal = document.querySelector('.btnAbreModalBurguer');
+const btnFechaModal = document.querySelector('.btnFechaModalBurguer');
+const modalBurguer = document.querySelector('.modalMenuBurguer');
+btnAbreModal.onclick = () => {
+    modalBurguer.showModal();
+    modalBurguer.classList.remove("fechaModal");
+    modalBurguer.classList.add("abreModal");
+    console.log(modalBurguer.classList);
+}
+
+btnFechaModal.onclick = () => {
+    modalBurguer.classList.remove("abreModal");
+    modalBurguer.classList.add("fechaModal");
+    console.log(modalBurguer.classList);
+    modalBurguer.close();
+}
+
+window.addEventListener("resize", function () {
+    modalBurguer.close();
+});
+
+// btnAbreModal.click();
+
+//
+
 const btnMain = document.querySelector('#btn-main')
 btnMain.addEventListener('click', function (event) {
     event.preventDefault();
@@ -11,24 +38,21 @@ btnMain.addEventListener('click', function (event) {
     var element = document.querySelector('#area-escolha-planos');
     var elementPosition = element.getBoundingClientRect().top + window.scrollY;
     var offset = elementPosition - headerHeight;
-    
+
     window.scrollTo({
         top: offset,
         behavior: 'smooth'
     });
-    
-    setTimeout(function() {
+
+    setTimeout(function () {
         currentItem = 1;
         FocarCurrentItem();
     }, 500);
 });
 
-var planos = document.querySelectorAll(".plano");
-planos.forEach(plano => {
-    if (!plano.classList.contains("plano-principal")) {
-        plano.style.paddingTop = "45px";
-    }
-});
+var planos = Array.from(document.querySelectorAll(".plano"));
+planos[0].style.paddingTop = "45px";
+planos[2].style.paddingTop = "45px";
 
 /* Carrossel */
 
@@ -56,8 +80,6 @@ controls.forEach((control) => control.addEventListener("click", () => {
     }
 
     FocarCurrentItem();
-
-    // console.log("controls: " + controls, " - currentitem: " + currentItem, " - items: " + items, " - lengthItems: " + lengthItems);
 }))
 
 items.forEach((item) => item.addEventListener("click", () => {
@@ -88,5 +110,4 @@ function MostraDialog(e) {
         modals[idNumBtn].close();
         linkPlanos.click()
     }
-    // console.log(idNumBtn, btnSMs, btnSMs[idNumBtn], modals, modals[idNumBtn], setas);
 }

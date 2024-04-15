@@ -1,0 +1,176 @@
+:root {
+   font-size: 6.25%;
+   color: var(--cor-1);
+
+   --cor-1: #0b182f;
+   --cor-2: #0f2356;
+   --cor-3: #315185;
+   --cor-4: #6f8ebf;
+   --cor-5: #FD8F08;
+   --cor-6: #FFA83A;
+   --cor-7: #FFD06B;
+   --cor-8: #ffe2a3;
+   --cor-9: #4CAF50;
+   --cor-10: #6DDC79;
+   --cor-11: #8EF39B;
+   --cor-12: #AFFABE;
+   --cor-13: #9C27B0;
+   --cor-14: #B64FD3;
+   --cor-15: #D68FF1;
+   --cor-16: #EABDF8;
+}
+
+@media (min-width: 600px) {
+   #page #gray-overlay {
+      background: linear-gradient(to top, rgb(225, 237, 254) 0%, #ffe2a330 30%);
+   }
+
+   #page #top-of-page {
+      background: center center / 75% no-repeat url(../images/Imagem-Principal_Hospen.jpg);
+   }
+
+   #top-of-page #content-main .titulo label {
+      left: 60%;
+   }
+
+   #extraFooter #contatos table {
+      width: 50%;
+   }
+}
+
+@media (max-width: 1000px) {
+   .listaDesk {
+      display: none;
+   }
+
+   header .btnAbreModalBurguer,
+   .btnAbreModalBurguer:after {
+      display: block;
+   }
+
+   .modalMenuBurguer {
+      width: 50vw !important;
+   }
+}
+
+@media (min-width: 1000px) {
+
+   #page #gray-overlay {
+      background: linear-gradient(to top, rgb(225, 237, 254) 0%, transparent 30%);
+   }
+
+   #page #top-of-page {
+      background: 85% 42% no-repeat url(../images/Imagem-Principal_Hospen.jpg);
+      background-size: clamp(40%, 45%, 55%);
+   }
+
+   #top-of-page #content-main .titulo {
+      text-align: start;
+   }
+
+   #top-of-page #content-main .titulo label {
+      left: 25%;
+   }
+
+   #top-of-page #content-main article {
+      grid-area: conteudo;
+
+      width: 40%;
+      max-height: 300px;
+
+      display: block;
+
+      margin: 45px 0px 0px 30px;
+      padding: 10px;
+
+      color: var(--cor-3);
+   }
+
+   #top-of-page #content-main article ul {
+      list-style: none;
+   }
+
+   #top-of-page #content-main article ul li {
+      font-size: clamp(18rem, 1vw + 3rem, 28rem);
+   }
+
+   #top-of-page #content-main article ul li+li {
+      margin-top: 20px;
+   }
+
+   #top-of-page #content-main #btn-main {
+      left: 20px;
+   }
+
+   .gallery {
+      gap: 20px;
+   }
+
+   #center-of-page #vantagens-Hospen {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      height: 700px;
+
+      background: 90% center / contain no-repeat url(../images/img-pessoas_media.jpg);
+   }
+
+   #center-of-page #vantagens-Hospen #conteudo {
+      width: 60%;
+      height: fit-content;
+
+      text-align: center;
+
+      border-radius: 15px;
+
+      position: absolute;
+
+      margin-top: 100px;
+      padding: 20px 55px 55px 65px;
+   }
+
+   #center-of-page #vantagens-Hospen #conteudo h2 {
+      font-size: clamp(15rem, 2vw + 20rem, 45rem);
+   }
+
+   #center-of-page #vantagens-Hospen #conteudo p {
+      font-size: clamp(10rem, 1vw + 2rem, 25rem);
+   }
+
+   #center-of-page #vantagens-Hospen #conteudo #Conteudo-p2-1::after {
+      content: "";
+   }
+
+   #center-of-page #vantagens-Hospen #conteudo #Conteudo-p2-2::after,
+   #conteudo #Conteudo-p3::after {
+      content: attr(data-content);
+   }
+
+   #center-of-page #vantagens-Hospen #conteudo button {
+      padding: 11px 30px;
+      font-size: 17rem;
+   }
+
+   #extraFooter #contatos table {
+      width: 30%;
+   }
+}
+
+@media (min-width: 1050px) {
+   .gallery {
+      margin: 0px;
+   }
+}
+
+@media (min-width: 1600px) {
+   #center-of-page #vantagens-Hospen {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      height: 750px;
+
+      background: 85% center / contain no-repeat url(../images/img-pessoas_media.jpg);
+   }
+}

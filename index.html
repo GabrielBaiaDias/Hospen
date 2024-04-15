@@ -27,11 +27,34 @@
 <body>
 	<header id="header">
 		<div id="logo"></div>
-		<svg id="menu-icon" width="40" height="40" fill="none" stroke="#FD8f08" stroke-linecap="round"
-			stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-			<path d="M4 18h16M4 6h16H4Zm0 6h16H4Z"></path>
-		</svg>
+		<nav class="listaDesk">
+			<a href="#" class="opcoesNav">Domínios</a>
+			<a href="#" class="opcoesNav">Hospedagem</a>
+			<a href="#" class="opcoesNav">Servidores</a>
+			<a href="#" class="opcoesNav">Conteúdos</a>
+		</nav>
+		<button class="btnAbreModalBurguer"></button>
+
 	</header>
+	<dialog class="modalMenuBurguer">
+		<nav>
+			<div class="headerNav">
+			<button class="btnFechaModalBurguer"></button>
+			<h2>MENU</h2>
+			</div>
+			<section class="listaBurguer">
+				<a href="#" class="opcoesNav">Domínios</a>
+				<a href="#" class="opcoesNav">Hospedagem</a>
+				<a href="#" class="opcoesNav">Servidores</a>
+				<a href="#" class="opcoesNav">Conteúdos</a>
+			</section>
+			<!-- <ul>
+				<li class="opcoesNav"><a href="#">Domínios</a></li>
+				<li class="opcoesNav"><a href="#">Hospedagem</a></li>
+				<li class="opcoesNav"><a href="#">Servidores</a></li>
+			</ul> -->
+		</nav>
+	</dialog>
 	<main>
 		<div id="page">
 			<div id="top-of-page">
@@ -41,12 +64,7 @@
 						<h1>Mantenha sua Empresa</h1>
 						<label>Sempre Conectada!</label>
 					</div>
-					<!-- <article>
-						<p>In the digital age, your company must always be online and ready to meet market demands.
-							We provide specialized WordPress hosting, with premium themes and plugins, along with
-							professional courses on website and online store creation in the Combo Cloud package.
-							Plus:
-						</p>
+					<article>
 						<ul>
 							<li>⦁ &nbsp; Registro de Domínio Gratuito: Fortaleça sua presença online com um
 								registro de domínio gratuito.
@@ -57,7 +75,7 @@
 								semana para garantir
 								desempenho ideal do seu site.</li>
 						</ul>
-					</article> -->
+					</article>
 					<a id="btn-main" class="btn" href="#area-escolha-planos">Começar agora</a>
 				</section>
 			</div>
@@ -114,7 +132,7 @@
 										</ul>
 									</dialog>
 								</div>
-								<div class="plano plano-selected plano-principal">
+								<div class="plano plano-selected">
 									<span class="popular">Mais Popular</span>
 									<!-- tentar trocar este span por plano.before com content: "Most popular"; -->
 									<section class="infos-planos">
@@ -123,11 +141,11 @@
 											<h3>Pro</h3>
 										</section>
 										<section class="cashback">
-											<span>66% de chashback</span>
+											<span>56% de chashback</span>
 										</section>
 										<section class="preco-plano">
 											<span>R$</span>
-											<strong>65,99</strong>
+											<strong>55,99</strong>
 											<span>/mês</span>
 											<span>&nbsp;R$99,99&nbsp;</span>
 										</section>
@@ -183,16 +201,30 @@
 				<section id="vantagens-Hospen">
 					<!-- <img src="images/img-pessoas.jpg" alt=""> -->
 					<div id="conteudo">
-						<h2>Hospedagem Hospen &nbsp; Veja Seu Site Voar!</h2>
+						<h2>Hospedagem <span>Hospen</span></h2>
 						<p>
 							Descubra o verdadeiro potencial do seu site com a Hospen - a hospedagem que transforma sonho em
 							realidade!
 						</p>
 
-						<p>
-							Experimente o desempenho aprimorado e a segurança avançada que só a Hospen pode oferecer. Nossos
-							servidores de alta qualidade garantem ...
+						<p id="Conteudo-p2-1" data-content="Experimente o desempenho aprimorado e a segurança avançada que só a Hospen pode oferecer. 
+						servidores de alta qualidade garantem..."></p>
+						<p id="Conteudo-p2-2"
+							data-content="Experimente o desempenho aprimorado e a segurança avançada que só a Hospen pode oferecer. 
+						servidores de alta qualidade garantem tempos de carregamento rápidos e proteção contra ameaças cibernéticas e nossa equipe de suporte técnico especializado para ajudar a qualquer momento.">
 						</p>
+
+						<p id="Conteudo-p3" data-content="Gerencie seu site com facilidade através de nosso painel de controle único e desfrute da
+						flexibilidade e facilidade que permitem que seu site cresça com você. Com backups automáticos,
+						certificados SSL gratuitos e diversas outras vantegens, a Hospen fornece tudo o que você precisa."></p>
+
+						<!-- 
+						Confie na Hospen para hospedar seu site e elevar sua presença na web para o próximo nível. Junte-se a
+						milhares de clientes satisfeitos que confiam em nós para fornecer hospedagem confiável e de alta
+						qualidade.
+
+						Deixe a Hospen ser sua parceira na jornada online e descubra o que é possível para o seu site! -->
+
 						<button id="btnPrevilegiosLM">Ler mais...</button>
 					</div>
 				</section>

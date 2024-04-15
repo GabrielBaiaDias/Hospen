@@ -7,6 +7,26 @@
     font-family: 'poppins';
 }
 
+@keyframes abreModal {
+    0% {
+        width: 0vw;
+    }
+
+    100% {
+        width: 100vw;
+    }
+}
+
+@keyframes fechaModal {
+    0% {
+        width: 100vw;
+    }
+
+    100% {
+        width: 0vw;
+    }
+}
+
 :root {
     font-size: 6.25%;
     color: var(--cor-1);
@@ -27,6 +47,16 @@
     --cor-14: #B64FD3;
     --cor-15: #D68FF1;
     --cor-16: #EABDF8;
+}
+
+::-webkit-scrollbar {
+    background: #FEDCAE;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 100%;
+    background: var(--cor-6);
+    border-radius: 5px;
 }
 
 header {
@@ -52,7 +82,7 @@ header {
 
 header.rolagem {
     height: 80px;
-    background-color: #fffffff2;
+    background-color: #fffffff7;
 }
 
 header #logo {
@@ -61,12 +91,210 @@ header #logo {
 
     scroll-margin-top: 100px;
 
-    background: left center / contain
-        /* fixed */
-        no-repeat url(../images/logo-fundo-transparente_2.png);
+    background: left center / contain no-repeat url(../images/logo-fundo-transparente_2.png);
+}
+
+header #btn-menu-icon {
+    border: none;
+    background: transparent;
+}
+
+header .btnAbreModalBurguer,
+.btnAbreModalBurguer:after {
+    display: none;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    padding-right: 10px;
+
+    font-family: FontAwesome;
+    font-size: 35rem;
+    color: var(--cor-5);
+    content: "\f0c9";
+}
+
+.listaDesk {
+    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+
+    margin-right: 100px;
+
+    box-sizing: border-box;
+}
+
+.listaDesk a {
+    font-weight: 600;
+    position: relative;
+    color: var(--cor-5);
+    padding-bottom: 10px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.listaDesk a:hover {
+    font-weight: 700;
+    color: var(--cor-6);
+    transform: translateY(-5px);
+}
+
+.listaDesk a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-6);
+    transition: width 0.3s ease;
+}
+
+.listaDesk a:hover::after {
+    width: 100%;
+    transition: width 0.3s ease;
+}
+
+/* === */
+
+.modalMenuBurguer { 
+    width: 450px;
+    height: 110vh;
+
+    border: none;
+    outline: none;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 3;
+
+    background: #eaf3ff;
+
+    overflow-y: scroll;
+    
+    transition: .3s ease-in-out 0s;
+}
+
+.modalMenuBurguer::-webkit-scrollbar-thumb {
+    width: 100%;
+    border-radius: 0px;
+    background-color: var(--cor-3);
+}
+
+.modalMenuBurguer::-webkit-scrollbar {
+    width: 5px;
+    background-color: #6f8ebf11;
+}
+
+.abreModal {
+    animation: abreModal .3s linear forwards;
+}
+
+.fechaModal {
+    animation: fechaModal .3s linear forwards;
+}
+
+.modalMenuBurguer .btnFechaModalBurguer,
+.btnFechaModalBurguer:after {
+    outline: none;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+
+    width: 50px;
+    height: 50px;
+
+    font-family: FontAwesome;
+    font-size: 38rem;
+    color: var(--cor-1);
+    content: "\f00d";
+}
+
+.modalMenuBurguer .headerNav {
+    width: 95%;
+    height: 70px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background: transparent;
+
+    margin: 0px auto;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid var(--cor-4);
+}
+
+.modalMenuBurguer .headerNav h2 {
+    width: 100%;
+    text-align: center;
+
+    font-family: 'epilogue';
+    font-weight: 400;
+    font-size: 25rem;
+}
+
+.modalMenuBurguer nav .listaBurguerBurguer {
+    /* padding: 10px; */
+    width: 100%;
+    height: fit-content;
+}
+
+.modalMenuBurguer nav .listaBurguer a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 30px;
+
+    /* border-radius: 10px; */
+
+    /* background: #6f8ebf11; */
+    color: var(--cor-2);
+
+    transition: .2s;
+}
+
+.modalMenuBurguer nav .listaBurguer>* {
+    margin-bottom: 10px auto;
+    border-bottom: .1px solid #6f8ebf31;
+}
+
+.modalMenuBurguer nav .listaBurguer a:first-child {
+    border-top: .1px solid #6f8ebf31;
+}
+
+.modalMenuBurguer nav .listaBurguer a::after {
+    font-family: FontAwesome;
+    font-size: 20rem;
+    content: "\f105";
+    color: var(--cor-3);
+
+    position: absolute;
+    right: 5%;
+}
+
+.modalMenuBurguer nav .listaBurguer a:hover {
+    background: var(--cor-4);
+}
+
+.modalMenuBurguer::backdrop {
+    background-color: #0b182f40;
 }
 
 body {
+    overflow-x: hidden;
     max-width: 100vw;
     height: 2000px;
 }
@@ -96,9 +324,8 @@ h2 {
 
     padding-bottom: 100px;
 
-    background: center center / cover
-        /* fixed */
-        no-repeat url(../images/Imagem-Principal_Hospen.jpg);
+    background: center center / 100% no-repeat url(../images/Imagem-Principal_Hospen.jpg);
+    background-color: #FEDCAE !important;
 }
 
 #page #gray-overlay {
@@ -110,7 +337,7 @@ h2 {
 
     position: absolute;
     top: 1px;
-    background: linear-gradient(to top,rgb(225, 237, 254) 0%, transparent 30%);
+    background: linear-gradient(to top, rgb(225, 237, 254) 0%, #ffe2a340 30%);
     color: white;
 }
 
@@ -124,7 +351,7 @@ h2 {
 
     margin-bottom: 40px;
     padding: 20px;
-    padding-top: 150px;
+    padding-top: 155px;
 
     text-indent: 10px;
 
@@ -138,22 +365,16 @@ h2 {
 
 }
 
-#top-of-page #content-main article {
-    grid-area: conteudo;
-
-    font-size: clamp(5rem, 20rem, 30rem);
-
-    margin: 30px 0px;
-    margin-bottom: 200px;
-}
-
 #top-of-page #content-main .titulo {
     grid-area: titulo;
+    text-align: center;
+
+    position: relative;
 }
 
 #top-of-page #content-main .titulo h1 {
 
-    font-size: clamp(25rem, 5vw + 10rem, 55rem);
+    font-size: clamp(20rem, 5vw + 10rem, 45rem);
 
     align-self: center;
     color: var(--cor-2);
@@ -161,40 +382,22 @@ h2 {
 }
 
 #top-of-page #content-main .titulo label {
+    width: fit-content;
+
     position: absolute;
     left: 50%;
 
     font-family: 'Epilogue';
-    color: var(--cor-3);
+    color: var(--cor-2);
 
 }
 
-#top-of-page #content-main article ul {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    font-size: clamp(2rem, 1vw + 10rem, 23rem);
-    list-style-type: none;
-
-    margin-top: 10px;
-}
-
-#content-main article p {
+#top-of-page #content-main article {
     display: none;
-}
-
-.btn {
-    border: none;
-    outline: none;
 }
 
 #top-of-page #content-main #btn-main {
     grid-area: botao;
-/* 
-    width: 85%;
-    min-height: 70px; 
-    */
 
     position: absolute;
     bottom: 12%;
@@ -205,7 +408,7 @@ h2 {
     justify-self: center;
 
     margin: 0px auto;
-    padding: 25px  100px;
+    padding: 25px 90px;
 
     border-radius: 10px;
     background-color: var(--cor-2);
@@ -227,7 +430,7 @@ h2 {
     width: 100%;
     height: fit-content;
 
-    background: linear-gradient(to bottom,rgb(225, 237, 254) 90%, transparent);
+    background: linear-gradient(to bottom, rgb(225, 237, 254) 90%, transparent);
 
 
     padding: 25px 10px 10px 10px;
@@ -236,8 +439,8 @@ h2 {
 #area-escolha-planos h2 {
     width: 95%;
 
-    font-size: clamp(25rem, 4.5vw + 10rem, 50rem);
-    /* line-height: 35rem; */
+    font-size: clamp(20rem, 5vw + 10rem, 45rem);
+    line-height: clamp(25rem, 5vw + 15rem, 50rem);
     font-weight: 700;
     text-align: center;
 }
@@ -312,7 +515,7 @@ h2 {
 .gallery {
     display: flex;
     place-self: center;
-    gap: 8px;
+    gap: 10px;
     flex-direction: row;
     flex-shrink: 0;
 
@@ -333,11 +536,12 @@ h2 {
     margin-right: 10px;
     background: white;
 
+    transition: .5s ease-out;
 }
 
-.plano-principal {
+.plano:hover {
     border: none;
-    box-shadow: 0px 0px 20px var(--cor-8);
+    box-shadow: 0px 0px 20px var(--cor-4);
     transform: translateY(-20px);
 }
 
@@ -392,7 +596,7 @@ h2 {
     /* background-color: var(--cor-4); */
 }
 
-.plano-principal .infos-planos .cashback span {
+.gallery>#plano1 .infos-planos .cashback span {
     background-color: var(--cor-8);
 }
 
@@ -446,7 +650,7 @@ h2 {
     /* background-color: var(--cor-3); */
 }
 
-.plano-principal>.infos-planos>button {
+.gallery>#plano1>.infos-planos>button {
     background-color: var(--cor-5);
 }
 
@@ -519,7 +723,7 @@ h2 {
     color: var(--cor-1); */
 }
 
-.plano-principal #saibaMais-2 {
+.gallery>#plano1 #saibaMais-2 {
     border-top: 1px solid var(--cor-5);
     color: var(--cor-5);
 }
@@ -619,7 +823,7 @@ h2 {
 
 #center-of-page #vantagens-Hospen {
     width: 100%;
-    height: 700px;
+    height: 750px;
 
     position: relative;
 
@@ -627,31 +831,46 @@ h2 {
     flex-direction: row;
     justify-content: center;
 
-    background: center bottom / contain no-repeat url(../images/img-pessoa-sentada_2.jpg);
+    background: center center / contain no-repeat url(../images/img-pessoa-sentada.jpg);
 }
 
 #center-of-page #vantagens-Hospen #conteudo {
     width: 100%;
     height: fit-content;
 
+    text-align: start;
+
     border-radius: 15px;
 
     position: absolute;
 
-    padding: 20px;
+    padding: 15px;
+}
+
+#center-of-page #vantagens-Hospen #conteudo #Conteudo-p2-1::after {
+    content: attr(data-content);
 }
 
 #center-of-page #vantagens-Hospen #conteudo h2 {
-    font-size: 30rem;
+    font-size: clamp(20rem, 3vw + 15rem, 45rem);
     font-weight: bold;
     text-align: center;
 
+    margin: 0px auto;
     margin-top: 10px;
+
+    transition: .5;
+}
+
+#center-of-page #vantagens-Hospen #conteudo h2 span {
+    color: var(--cor-6);
 }
 
 #center-of-page #vantagens-Hospen #conteudo p {
     margin: 20px 0px;
+
     text-indent: 10px;
+    font-size: clamp(10rem, 1vw + 10rem, 30rem);
 }
 
 #center-of-page #vantagens-Hospen #conteudo button {
@@ -660,7 +879,8 @@ h2 {
     border: none;
     border-radius: 50px;
 
-    background: var(--cor-1);
+    background: var(--cor-2);
+    /* background: var(--cor-6); */
     color: white;
 
     transition: .3s;
@@ -702,10 +922,10 @@ h2 {
     justify-content: center;
 }
 
-#extraFooter #contatos table{
+#extraFooter #contatos table {
     width: 80%;
 
-    margin: auto ;
+    margin: auto;
     margin-bottom: 20px;
 }
 
@@ -715,12 +935,16 @@ h2 {
     font-weight: 500;
 }
 
-#extraFooter #contatos table tbody tr td:nth-child(1){
+#extraFooter #contatos table tbody tr td:nth-child(1) {
     text-transform: uppercase;
     width: 40%;
 }
 
-#extraFooter #contatos table tbody tr td{
+#extraFooter #contatos table tbody tr td:nth-child(2) {
+    text-align: end;
+}
+
+#extraFooter #contatos table tbody tr td {
     text-align: start;
     font-size: 10px !important;
 
@@ -731,7 +955,7 @@ footer {
     width: 100%;
     height: 40px;
 
-    
+
     display: flex;
     flex-direction: row;
     justify-content: center;
